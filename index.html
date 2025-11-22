@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeX | AI Comparison Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            colors: {
+              'primary': '#38bdf8',   /* Sky 400 - Bright Blue */
+              'secondary': '#34d399', /* Emerald 400 - Bright Green */
+              'accent': '#2dd4bf',    /* Teal 400 */
+              'surface-light': 'rgba(255, 255, 255, 0.05)', 
+              'surface-glass': 'rgba(0, 0, 0, 0.3)',
+              'text-main': '#f1f5f9', /* Slate 100 */
+              'text-sub': '#94a3b8', /* Slate 400 */
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'gradient-x': 'gradient 15s ease infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              gradient: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        /* Moving Gradient Background: Deep Dark Blue/Green */
+        background: linear-gradient(-45deg, #0f172a, #022c22, #1e1b4b, #111827);
+        background-size: 400% 400%;
+        animation: gradient 20s ease infinite;
+        color: #f1f5f9;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.2); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.2); 
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      }
+      .glass-card-hover:hover {
+        background: rgba(255, 255, 255, 0.07);
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

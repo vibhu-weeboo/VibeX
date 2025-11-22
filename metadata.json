@@ -1,0 +1,7 @@
+{
+  "name": "NeuralNexus - AI Model Comparator",
+  "description": "A futuristic, dynamic dashboard for comparing and analyzing the latest AI models using real-time data visualization and Gemini-powered deep insights.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
